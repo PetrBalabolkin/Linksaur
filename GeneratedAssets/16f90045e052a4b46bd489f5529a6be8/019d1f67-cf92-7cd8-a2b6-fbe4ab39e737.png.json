@@ -1,0 +1,27 @@
+{
+    "asset": "16f90045e052a4b46bd489f5529a6be8",
+    "fileName": "019d1f67-cf92-7cd8-a2b6-fbe4ab39e737.png",
+    "prompt": "Stylized urban ground pavement texture, gray and blue tones, minimalist vector style, seamless horizontal tileable, for 2D game ground",
+    "negativePrompt": "",
+    "model": "2e08f181-6547-40b4-b51e-f6cc1fd63500",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "1c08cf206d56e33a55d44e88cf2c19b9",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

@@ -1,0 +1,14 @@
+{
+    "asset": "4c34461e0c05946a1a22bea9bcee7b6d",
+    "fileName": "019d1f75-cd3d-71ea-b1ae-cbc5210e6504.wav",
+    "prompt": "LinkedIn connection sound, positive ding, digital notification sparkle",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "5f904fea733f0fbd5c3dfa09fde63b9f",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false
+}

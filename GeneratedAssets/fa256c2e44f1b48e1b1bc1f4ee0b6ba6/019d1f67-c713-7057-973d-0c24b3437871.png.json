@@ -1,0 +1,27 @@
+{
+    "asset": "fa256c2e44f1b48e1b1bc1f4ee0b6ba6",
+    "fileName": "019d1f67-c713-7057-973d-0c24b3437871.png",
+    "prompt": "Stylized city silhouette, dark blue and gray tones, minimalist vector style, seamless horizontal tileable, for 2D parallax background",
+    "negativePrompt": "",
+    "model": "2e08f181-6547-40b4-b51e-f6cc1fd63500",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "ef1b08a6c4f4f78789dca612efaf4497",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

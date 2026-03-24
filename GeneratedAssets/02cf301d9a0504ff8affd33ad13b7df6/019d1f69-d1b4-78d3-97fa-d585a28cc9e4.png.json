@@ -1,0 +1,27 @@
+{
+    "asset": "02cf301d9a0504ff8affd33ad13b7df6",
+    "fileName": "019d1f69-d1b4-78d3-97fa-d585a28cc9e4.png",
+    "prompt": "Instagram camera logo icon, colorful gradient square, minimalist clean vector style, white background for removal",
+    "negativePrompt": "",
+    "model": "2e08f181-6547-40b4-b51e-f6cc1fd63500",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "80ed0c60724ccf3bcd79dc29bec6debb",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

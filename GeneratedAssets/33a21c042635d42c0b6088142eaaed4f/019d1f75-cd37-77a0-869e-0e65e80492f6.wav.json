@@ -1,0 +1,14 @@
+{
+    "asset": "33a21c042635d42c0b6088142eaaed4f",
+    "fileName": "019d1f75-cd37-77a0-869e-0e65e80492f6.wav",
+    "prompt": "Electronic power up sound, ascending digital scale, high energy pulse",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "d05835dd809a9542a6937142bebd5968",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false
+}

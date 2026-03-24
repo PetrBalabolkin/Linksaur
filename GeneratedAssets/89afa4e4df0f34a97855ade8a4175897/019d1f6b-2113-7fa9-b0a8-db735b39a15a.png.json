@@ -1,0 +1,27 @@
+{
+    "asset": "89afa4e4df0f34a97855ade8a4175897",
+    "fileName": "019d1f6b-2113-7fa9-b0a8-db735b39a15a.png",
+    "prompt": "Cute cartoon dinosaur character, LinkedIn blue color theme, professional minimalist vector style, full body head to toe in frame, side view standing pose, for 2D runner game, white background for removal",
+    "negativePrompt": "",
+    "model": "2e08f181-6547-40b4-b51e-f6cc1fd63500",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "1ff3793503e5c9336192701208335455",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

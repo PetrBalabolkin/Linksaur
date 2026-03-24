@@ -1,0 +1,27 @@
+{
+    "asset": "d18f2432e4f464fd4b8a1348ef7e0b48",
+    "fileName": "019d1f67-d676-7f4a-a85f-e0dc65535ca6.png",
+    "prompt": "LinkedIn style connection icon, blue person silhouette with a plus sign, professional clean vector style, white background for removal",
+    "negativePrompt": "",
+    "model": "2e08f181-6547-40b4-b51e-f6cc1fd63500",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "3ba9edebd0f0182f06e2d14fc5758a89",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

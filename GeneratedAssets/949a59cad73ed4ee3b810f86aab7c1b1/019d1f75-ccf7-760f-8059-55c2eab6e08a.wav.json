@@ -1,0 +1,14 @@
+{
+    "asset": "949a59cad73ed4ee3b810f86aab7c1b1",
+    "fileName": "019d1f75-ccf7-760f-8059-55c2eab6e08a.wav",
+    "prompt": "Cartoon character jumping sound, short and punchy boing",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "94b66a2ae9228a7775f7c964cb260ab4",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false
+}
