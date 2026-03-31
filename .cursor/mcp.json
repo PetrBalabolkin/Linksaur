@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "unity-mcp-gateway": {
+      "command": "/Users/martinlehocky/projects/Linksaur/Library/PackageCache/com.unity.ai.assistant@4919fbc5c651/RelayApp~/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64",
+      "args": [
+        "--mcp",
+        "--log-dir",
+        "/Users/martinlehocky/projects/Linksaur/Logs"
+      ],
+      "env": {
+        "UNITY_ACP_SESSION_TOKEN": "bec830bd240cef305517dfbe61c09b5df1dba03d1181382a6bba9e0f62e188eb",
+        "UNITY_INSTANCE_ID": "71722"
+      }
+    }
+  }
+}

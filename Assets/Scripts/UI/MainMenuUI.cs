@@ -18,13 +18,11 @@ namespace Linksaurus.UI
             UpdateHighScore();
             
             GameManager.OnGameStart += Hide;
-            GameManager.OnGameOver += Show;
         }
 
         private void OnDestroy()
         {
             GameManager.OnGameStart -= Hide;
-            GameManager.OnGameOver -= Show;
         }
 
         private void Update()

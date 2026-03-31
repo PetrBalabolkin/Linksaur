@@ -1,0 +1,36 @@
+{
+    "asset": "32092b070d646476181cb3c747c7180a",
+    "fileName": "019d4325-1ebf-7a3b-be39-22f9ece551f2.mp4",
+    "prompt": "Linksaurus character, slow motion running cycle, side view, facing right, corporate dinosaur wearing a tie and backpack, high contrast, clean lines, game asset style",
+    "negativePrompt": "",
+    "model": "d8abdb7e-8844-4a91-8eee-55f4c8e60ca0",
+    "modelName": "Seedance 1 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "1b6df97257f5464f41ceadddf705d39f",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "89afa4e4df0f34a97855ade8a4175897"
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0
+}
