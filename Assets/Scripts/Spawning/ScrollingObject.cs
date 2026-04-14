@@ -14,7 +14,8 @@ namespace Linksaurus.Spawning
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             if (sr != null && sr.sprite != null)
             {
-                _worldWidth = sr.bounds.size.x * transform.localScale.x;
+                // Use sprite.bounds.size (not sr.bounds which is in world space!)
+                _worldWidth = sr.sprite.bounds.size.x * transform.localScale.x;
             }
             else
             {
@@ -32,15 +33,15 @@ namespace Linksaurus.Spawning
 
             if (transform.position.x < -_screenHalfWidth - _worldWidth)
             {
-                // If it's a background layer, loop it
+                // Check if it's a background layer (parent named "Background")
                 if (transform.parent != null && transform.parent.name == "Background")
                 {
-                    // Reposition to the right of its current position by exactly twice the width
-                    transform.position += Vector3.right * (_worldWidth * 2f); 
+                    // For background tiles, wrap by 2x the width to account for paired tile
+                    transform.position += Vector3.right * (_worldWidth * 2f);
                 }
                 else
                 {
-                    // It's a pooled obstacle/item
+                    // It's a pooled obstacle/item, return to pool
                     ObjectPool.Instance.ReturnToPool(gameObject);
                 }
             }

@@ -13,7 +13,7 @@ namespace Linksaurus.Player
         [SerializeField] private float _jumpForce = 9.5f; // Slightly more powerful for better responsiveness
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _groundCheckRadius = 0.15f;
-        [SerializeField] private Vector3 _groundCheckOffset = new Vector3(0, 0.1f, 0);
+        [SerializeField] private Vector3 _groundCheckOffset = new Vector3(0, -0.6f, 0);
 
         private Rigidbody2D _rb;
         private Animator _animator;
