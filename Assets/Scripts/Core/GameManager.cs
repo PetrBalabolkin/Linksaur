@@ -43,10 +43,13 @@ namespace Linksaurus.Core
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+                Debug.Log("GameManager Instance set and marked DontDestroyOnLoad.");
             }
             else
             {
-                Destroy(gameObject);
+                Debug.LogWarning("Duplicate GameManager found. Destroying duplicate component.");
+                Destroy(this);
+                return;
             }
 
             _audioSource = GetComponent<AudioSource>();

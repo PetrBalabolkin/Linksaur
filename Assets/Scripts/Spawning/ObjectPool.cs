@@ -15,10 +15,12 @@ namespace Linksaurus.Spawning
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+                Debug.Log("ObjectPool Instance set.");
             }
             else
             {
-                Destroy(gameObject);
+                Debug.LogWarning("Duplicate ObjectPool found. Destroying component.");
+                Destroy(this);
             }
         }
 

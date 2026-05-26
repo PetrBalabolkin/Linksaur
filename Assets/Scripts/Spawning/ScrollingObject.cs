@@ -9,20 +9,29 @@ namespace Linksaurus.Spawning
         private float _worldWidth;
         private float _screenHalfWidth;
 
-        private void Start()
+        private void OnEnable()
         {
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             if (sr != null && sr.sprite != null)
             {
-                // Use sprite.bounds.size (not sr.bounds which is in world space!)
-                _worldWidth = sr.sprite.bounds.size.x * transform.localScale.x;
+                if (sr.drawMode == SpriteDrawMode.Tiled)
+                {
+                    _worldWidth = sr.size.x * transform.localScale.x;
+                }
+                else
+                {
+                    _worldWidth = sr.sprite.bounds.size.x * transform.localScale.x;
+                }
             }
             else
             {
                 _worldWidth = 1f;
             }
 
-            _screenHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+            if (Camera.main != null)
+            {
+                _screenHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+            }
         }
 
         private void Update()
@@ -36,8 +45,19 @@ namespace Linksaurus.Spawning
                 // Check if it's a background layer (parent named "Background")
                 if (transform.parent != null && transform.parent.name == "Background")
                 {
-                    // For background tiles, wrap by 2x the width to account for paired tile
-                    transform.position += Vector3.right * (_worldWidth * 2f);
+                    // Find total number of siblings to wrap correctly
+                    int siblingCount = 0;
+                    foreach (Transform child in transform.parent)
+                    {
+                        if (child.name.StartsWith(gameObject.name.Split('_')[0])) // Match "Layer" or "Road"
+                        {
+                            siblingCount++;
+                        }
+                    }
+                    
+                    if (siblingCount == 0) siblingCount = 2; // Fallback
+                    
+                    transform.position += Vector3.right * (_worldWidth * siblingCount);
                 }
                 else
                 {
