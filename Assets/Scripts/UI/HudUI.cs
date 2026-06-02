@@ -25,6 +25,8 @@ namespace Linksaurus.UI
             PowerUpManager.OnPowerUpChanged += HandlePowerUpChanged;
             GameManager.OnGameStart += Show;
             GameManager.OnGameOver += Hide;
+            
+            SyncState();
         }
 
         private void OnDisable()
@@ -41,27 +43,49 @@ namespace Linksaurus.UI
             
             if (_powerUpPanel != null) _powerUpPanel.SetActive(false);
             
+            SyncState();
+            UpdateScore();
+        }
+
+        private void SyncState()
+        {
             // Manual sync in case we missed the Start event or re-enabled
             if (GameManager.Instance != null)
             {
                 if (GameManager.Instance.CurrentState == GameState.Playing) Show();
                 else Hide();
             }
-            
-            UpdateScore();
+
+            if (PowerUpManager.Instance != null && PowerUpManager.Instance.ActivePowerUp != null)
+            {
+                float duration = GetMaxDuration(PowerUpManager.Instance.ActivePowerUp.Value);
+                HandlePowerUpChanged(PowerUpManager.Instance.ActivePowerUp, duration);
+            }
+        }
+
+        private float GetMaxDuration(PowerUpType type)
+        {
+            switch (type)
+            {
+                case PowerUpType.Rocket: return 5f;
+                case PowerUpType.CoffeeBreak: return 8f;
+                case PowerUpType.RecruiterMode: return 6f;
+                case PowerUpType.Shield: return -1f;
+                default: return 0f;
+            }
         }
 
         private void Show()
         {
-            Debug.Log("HUD Showing");
             if (_hudPanel != null) _hudPanel.SetActive(true);
-            else Debug.LogWarning("HUD Panel reference missing!");
         }
 
         private void Hide()
         {
-            Debug.Log("HUD Hiding");
             if (_hudPanel != null) _hudPanel.SetActive(false);
+            // Clear any active power-up display so it doesn't bleed into the next game
+            if (_powerUpPanel != null) _powerUpPanel.SetActive(false);
+            _currentPowerUp = null;
         }
 
         private void TogglePause()
@@ -110,10 +134,9 @@ namespace Linksaurus.UI
                 if (_hudPanel != null && !_hudPanel.activeInHierarchy) Show();
             }
 
-            if (_currentPowerUp != null && _maxDuration > 0)
+            if (_currentPowerUp != null && _maxDuration > 0 && PowerUpManager.Instance != null && _powerUpFill != null)
             {
-                float remaining = PowerUpManager.Instance.RemainingDuration;
-                if (_powerUpFill != null) _powerUpFill.fillAmount = remaining / _maxDuration;
+                _powerUpFill.fillAmount = Mathf.Clamp01(PowerUpManager.Instance.RemainingDuration / _maxDuration);
             }
         }
     }

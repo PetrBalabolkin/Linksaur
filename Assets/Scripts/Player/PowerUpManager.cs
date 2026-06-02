@@ -33,9 +33,10 @@ namespace Linksaurus.Player
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else
+            else if (Instance != this)
             {
-                Destroy(gameObject);
+                Destroy(this);
+                return;
             }
         }
 

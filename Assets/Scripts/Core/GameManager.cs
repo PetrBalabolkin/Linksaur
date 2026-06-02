@@ -12,9 +12,8 @@ namespace Linksaurus.Core
 
         [Header("Settings")]
         public float InitialScrollSpeed = 5f;
-        public float SpeedIncreaseAmount = 0.2f;
+        public float SpeedRampRate = 0.05f;   // units per second
         public float MaxScrollSpeed = 12f;
-        public float SpeedIncreaseInterval = 10f;
 
         [Header("State")]
         public GameState CurrentState = GameState.Menu;
@@ -64,8 +63,7 @@ namespace Linksaurus.Core
             CurrentState = GameState.Playing;
             Time.timeScale = 1f;
 
-            CancelInvoke(nameof(IncreaseSpeed));
-            InvokeRepeating(nameof(IncreaseSpeed), SpeedIncreaseInterval, SpeedIncreaseInterval);
+            Debug.Log($"[GameManager] Game Started. Initial Speed: {ScrollSpeed:F2}");
 
             OnGameStart?.Invoke();
             OnScoreChanged?.Invoke();
@@ -90,27 +88,34 @@ namespace Linksaurus.Core
             OnGameUnpaused?.Invoke();
         }
 
+        private float _speedLogTimer;
+
         private void Update()
         {
+            if (CurrentState == GameState.Playing)
+            {
+                ScrollSpeed = Mathf.Min(ScrollSpeed + SpeedRampRate * Time.deltaTime, MaxScrollSpeed);
+
+                _speedLogTimer += Time.deltaTime;
+                if (_speedLogTimer >= 5f)
+                {
+                    Debug.Log($"[GameManager] Current Scroll Speed: {ScrollSpeed:F2} (Max: {MaxScrollSpeed})");
+                    _speedLogTimer = 0f;
+                }
+            }
+            else
+            {
+                _speedLogTimer = 0f;
+            }
+
             // Back button on Android (Escape)
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 if (CurrentState == GameState.Playing)
-                {
                     PauseGame();
-                }
                 else if (CurrentState == GameState.Paused)
-                {
                     UnpauseGame();
-                }
             }
-        }
-
-        private void IncreaseSpeed()
-        {
-            if (CurrentState != GameState.Playing) return;
-
-            ScrollSpeed = Mathf.Min(ScrollSpeed + SpeedIncreaseAmount, MaxScrollSpeed);
         }
 
         public void AddConnections(int amount)
@@ -149,7 +154,6 @@ namespace Linksaurus.Core
             if (CurrentState == GameState.GameOver) return;
 
             CurrentState = GameState.GameOver;
-            CancelInvoke(nameof(IncreaseSpeed));
 
             if (_audioSource != null && _hitSound != null)
             {
