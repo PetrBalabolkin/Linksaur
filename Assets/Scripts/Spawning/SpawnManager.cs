@@ -108,9 +108,6 @@ namespace Linksaurus.Spawning
 
                 if (prefab != null)
                 {
-                    // Sidewalk surface is at -3.5. 
-                    // Obstacles are ~1.0 world units high with center pivot.
-                    // Y = -3.0 puts the bottom exactly on the ground.
                     float y = (Random.value < 0.6f) ? -3.0f : -1.5f;
                     Spawn(prefab, y);
                 }
@@ -127,8 +124,7 @@ namespace Linksaurus.Spawning
                 if (_connectionPrefabs == null || _connectionPrefabs.Length == 0) continue;
 
                 GameObject prefab = _connectionPrefabs[Random.Range(0, _connectionPrefabs.Length)];
-                // Heights adjusted for -3.5 ground surface
-                float[] heights = { -3.0f, -1.0f, 1.0f }; // Ground, Air low, Air high
+                float[] heights = { -3.0f, -1.0f, 1.0f };
                 float y = heights[Random.Range(0, heights.Length)];
                 Spawn(prefab, y);
             }
