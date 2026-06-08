@@ -16,7 +16,8 @@ namespace Linksaurus.UI
         {
             _playButton.onClick.AddListener(StartGame);
             UpdateHighScore();
-            
+            Show();
+
             GameManager.OnGameStart += Hide;
         }
 

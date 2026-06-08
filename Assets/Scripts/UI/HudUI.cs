@@ -123,7 +123,7 @@ namespace Linksaurus.UI
                 if (_powerUpLabel != null) _powerUpLabel.text = type.ToString().ToUpper();
                 _currentPowerUp = type;
                 _maxDuration = duration;
-                if (_powerUpFill != null) _powerUpFill.fillAmount = 1f;
+                if (_powerUpFill != null) _powerUpFill.rectTransform.localScale = Vector3.one;
             }
         }
 
@@ -136,7 +136,8 @@ namespace Linksaurus.UI
 
             if (_currentPowerUp != null && _maxDuration > 0 && PowerUpManager.Instance != null && _powerUpFill != null)
             {
-                _powerUpFill.fillAmount = Mathf.Clamp01(PowerUpManager.Instance.RemainingDuration / _maxDuration);
+                float t = Mathf.Clamp01(PowerUpManager.Instance.RemainingDuration / _maxDuration);
+                _powerUpFill.rectTransform.localScale = new Vector3(t, 1f, 1f);
             }
         }
     }

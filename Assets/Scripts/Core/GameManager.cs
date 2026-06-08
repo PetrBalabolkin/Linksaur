@@ -52,6 +52,7 @@ namespace Linksaurus.Core
             }
 
             _audioSource = GetComponent<AudioSource>();
+            CurrentState = GameState.Menu;
             LoadData();
         }
 

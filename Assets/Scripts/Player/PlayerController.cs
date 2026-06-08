@@ -11,6 +11,7 @@ namespace Linksaurus.Player
     {
         [Header("Jump Settings")]
         [SerializeField] private float _jumpForce = 9.5f; // Slightly more powerful for better responsiveness
+        [SerializeField] private float _doubleJumpForce = 8f;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _groundCheckRadius = 0.15f;
         [SerializeField] private Vector3 _groundCheckOffset = new Vector3(0, -0.6f, 0);
@@ -18,6 +19,7 @@ namespace Linksaurus.Player
         private Rigidbody2D _rb;
         private Animator _animator;
         private bool _isGrounded;
+        private bool _canDoubleJump;
         private bool _shieldActive;
         private BoxCollider2D _collider;
 
@@ -76,15 +78,20 @@ namespace Linksaurus.Player
 
                 if (_isGrounded)
                 {
-                    Jump();
+                    Jump(_jumpForce);
+                    _canDoubleJump = true;
+                }
+                else if (_canDoubleJump)
+                {
+                    Jump(_doubleJumpForce);
+                    _canDoubleJump = false;
                 }
                 }
                 }
 
-        private void Jump()
+        private void Jump(float force)
         {
-            // Reset Y velocity for consistent jump height
-            _rb.linearVelocity = new Vector2(0, _jumpForce);
+            _rb.linearVelocity = new Vector2(0, force);
             if (_audioSource != null && _jumpSound != null)
             {
                 _audioSource.PlayOneShot(_jumpSound);
